@@ -1,4 +1,4 @@
-# Defect Detection on Coil Manufacturing Image Data
+# Defect Detection in Coil Manufacturing Image Data
 
 ### Capstone (Practicum) project for Master of Science in Computational Analytics degree @ Georgia Tech
 
