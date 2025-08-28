@@ -10,7 +10,7 @@ My team's project was sponsored by Novelis, a global leader in the production of
 Thus the goal of our project was to create an unsupervised ML model for anomaly (defect) detection, with high enough recall (around 95%) and specificity that it could be implemented in Novelis's manufacturing facilities. 
 
 #### *Solution:*
-My team decided to approach the project by each creating our own supervised ML models in parallel and then evaluating them against each other. I decided to develop a transformer architecture, since transformers are powerful for numerous applications including anomaly detection. The downside of using tranformers for industrial anomaly detection is that inference time tends to be relatively slow compared to other ML methods, but I found ways to manage this. 
+My team decided to approach the project by each creating our own supervised ML models in parallel and then evaluating them against each other. I decided to develop a transformer architecture, since transformers are powerful for numerous applications including anomaly detection. The downside of using tranformers for industrial anomaly detection is that inference tends to be relatively slow compared to other ML methods, but I found ways to manage this. 
 
 #### *Key Features:*
 - An encoder composed of layers of pretrained Vision Transformers (ViT)
