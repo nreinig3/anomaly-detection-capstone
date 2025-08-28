@@ -13,9 +13,10 @@ Thus the goal of our project was to create an unsupervised ML model for anomaly 
 My team decided to approach the project by each creating our own supervised ML models in parallel and then evaluating them against each other. I decided to develop a transformer architecture, since transformers are powerful for numerous applications including anomaly detection. The downside of using tranformers for industrial anomaly detection is that inference time tends to be relatively slow compared to other ML methods, but I found ways to manage this. 
 
 #### *Key Features:*
-- Encoder composed of layers of pretrained Vision Transformers (ViT)
-- Bottleneck that adds noise to the image representations, to force the decoder to ignore anomalies in image reconstruction
-- Decoder utilizing linear attention to reconstruct images
+- An encoder composed of layers of pretrained Vision Transformers (ViT)
+- A bottleneck that adds noise to the image representations, to force the decoder to ignore anomalies during image reconstruction
+- A decoder utilizing linear attention to reconstruct images
+- A loss function that calculates error from middle layers of the encoder and decoder, to allow for more degrees of freedom in finding solutions
 
 
 The goal of my team’s Capstone (Practicum) project was to develop an unsupervised anomaly detection method with high enough [precision and specificity] to be implemented in our sponsoring company's manufacturing facilities (our sponsor for the project was Novelis, a leading manufacturer and recycler of aluminum). Several machine learning methods were tested; the one I focused on was a transformer architecture because they tend to be accurate and although typically slower than ML methods like auto-encoders, there have been recent advancements that have made them more practical in industrial anomaly detection settings. My transformer work involved building upon a recently published transformer architecture with class-leading high performance metrics and relatively fast inference speed. The flowchart shows the major processes:
