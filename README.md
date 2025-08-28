@@ -3,7 +3,6 @@
 #### Capstone (Practicum) project for Master of Science in Computational Analytics degree @ Georgia Tech
 
 Problem:  
-
 My team's project was sponsored by Novelis, a global leader in the production of low-carbon Aluminum rolls used by beverage packaging, automotive, aerospace, and other industries. At the time of the project. Novelis was using a supervised machine learning model detect defects in its finished Aluminum rolls. But because supervised learning models aren't good at detecting novel types of defects, they wanted to know if unsupervised methods could be feasible. 
 
 Goal: 
