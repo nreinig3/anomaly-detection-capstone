@@ -20,6 +20,7 @@ My team decided to approach the project by each creating our own supervised ML m
 
 
 <img src="./images/transformer_figure.png" width="920" alt="A flow diagram of the transformer architecture showing the encoder, the bottleneck, and the decoder">
+
 ###### *Transformer flowchart showing encoder, bottleneck and decoder regions.*  
 
 
