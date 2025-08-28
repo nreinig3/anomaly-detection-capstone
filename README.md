@@ -16,7 +16,7 @@ My team decided to approach the project by each creating our own supervised ML m
 - An encoder composed of layers of pretrained Vision Transformers (ViT)
 - A bottleneck that adds noise to the image representations, to force the decoder to ignore anomalies during image reconstruction
 - A decoder utilizing linear attention to reconstruct images
-- A loss function that calculates error from middle layers of the encoder and decoder, to allow for more degrees of freedom in finding solutions
+- A loss function that calculates error from middle layers of the encoder and decoder, to allow for more degrees of freedom in finding solutions that minimize the loss
 
 
 The goal of my team’s Capstone (Practicum) project was to develop an unsupervised anomaly detection method with high enough [precision and specificity] to be implemented in our sponsoring company's manufacturing facilities (our sponsor for the project was Novelis, a leading manufacturer and recycler of aluminum). Several machine learning methods were tested; the one I focused on was a transformer architecture because they tend to be accurate and although typically slower than ML methods like auto-encoders, there have been recent advancements that have made them more practical in industrial anomaly detection settings. My transformer work involved building upon a recently published transformer architecture with class-leading high performance metrics and relatively fast inference speed. The flowchart shows the major processes:
