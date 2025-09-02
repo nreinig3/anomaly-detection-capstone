@@ -25,7 +25,7 @@ My team decided to approach the project by each creating our own supervised ML m
 
 *Figure 1: Transformer flowchart showing encoder, bottleneck and decoder regions.*  
 
-###### *DINOv2 Pre-Trained ViT Encoder*  
+##### *DINOv2 Pre-Trained ViT Encoder*  
 
 
 
