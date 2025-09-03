@@ -9,6 +9,9 @@ My team's project was sponsored by Novelis, a global leader in the production of
 ### Goal:
 Thus the goal of our project was to create an unsupervised ML model for anomaly (defect) detection, with high enough recall (around 95%) and specificity that it could be implemented in Novelis's manufacturing facilities. 
 
+### Constraints:
+We were required to deploy our solution in Microsoft's Azure ML cloud platform, on a T4 GPU (due to budget constraints and the available hardware stack at the factories). It's important to note that Azure has no in-house unsupervised anomaly detection model that could be used for our purposes, so we had to build our own models on the Azure ML platform.
+
 ### Solution:
 My team decided to approach the project by each creating our own supervised ML models in parallel and then evaluating them against each other. I decided to develop a transformer architecture, since transformers are powerful for numerous applications including anomaly detection. The downside of using tranformers for industrial anomaly detection is that inference tends to be relatively slow compared to other ML methods, but I found ways to manage this. 
 
@@ -48,8 +51,9 @@ representations. In this way, the model disrupts the accuracy of anomaly reconst
 by teaching it during training not to retain those regions. To accomplish this, we used a high
 level of dropout (30% dropout before each of the linear layers of the bottleneck).
 
-#### *ViT Decoder*  
-
+#### *"Linear Self-Attention in the ViT Decoder*  
+The decoder section of the model is composed of 8 ViT layers built as [x/x/x], which utilize a "linear" self-attention mechanism. Self-attention describes [], and the "linear" aspect here (as coined by Liu et al.) refers to a less computationally complex, more unfocused attention mechanism, characterized by [what makes it so the linear attn eqn can be recast?]. 
+In their paper for their "Dinomaly" model, Liu et al. describe this attention mechanism as being particularly well-suited for industrial anomaly detection, because its lower computation speeds up inference (which is often critical in industrial applications), and the unfocused attention could help prevent highly faithful reconstructions of anomalies, which can be a problem in transformers, autoencoders, and other ML algorithms used for anomaly detection. 
 #### *Unique Loss Function*  
 
 ### Results:  
