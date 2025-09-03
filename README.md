@@ -13,7 +13,7 @@ Thus the goal of our project was to create an unsupervised ML model for anomaly 
 We were required to deploy our solution in Microsoft's Azure ML cloud platform, on a T4 GPU (due to budget constraints and the available hardware stack at the factories). It's important to note that Azure has no in-house unsupervised anomaly detection model that could be used for our purposes, so we had to build our own models on the Azure ML platform.
 
 ### Solution:
-My team decided to approach the project by each creating our own supervised ML models in parallel and then evaluating them against each other. I decided to develop a transformer architecture, since transformers are powerful for numerous applications including anomaly detection. The downside of using tranformers for industrial anomaly detection is that inference tends to be relatively slow compared to other ML methods, but I found ways to manage this. 
+My team decided to approach the project by each creating our own supervised ML models in parallel and then evaluating them against each other. I decided to develop a transformer architecture, since transformers are powerful for numerous applications including anomaly detection. The downside of using tranformers for anomaly detection is that inference tends to be relatively slow compared to other ML methods, but I found ways to manage this. 
 
 ### Key Features:
 - An encoder composed of layers of pretrained Vision Transformers (ViT)
