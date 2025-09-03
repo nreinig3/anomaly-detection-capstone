@@ -25,7 +25,7 @@ My team decided to approach the project by each creating our own supervised ML m
 
 *Figure 1: Transformer flowchart showing encoder, bottleneck and decoder regions.*  
 
-My transformer model uses an encoder to build a latent representation of the image inputs and a decoder to reconstruct them. Anomalies were identified by quantifying the deviation between layers of the encoder and layers of the decoder (reconstruction error), with the expectation that anomalies would have a higher error values.
+My transformer model uses an encoder to build a latent representation of the image inputs and a decoder to reconstruct them. Anomalies were identified by quantifying the deviation between layers of the encoder and layers of the decoder (reconstruction error), with the expectation that anomalies would have a higher deviation.
 
 ##### *DINOv2 Pre-Trained ViT Encoder*  
 pre-trained Vision Transformer (ViT) as our encoder. Pre-trained ViTs have been found to
@@ -37,7 +37,13 @@ resolution (416x416 pixels during part of training). It has 12 layers and follow
 transformer architecture (see encoder region of Figure 13 above), with each layer using
 pre-trained, frozen attention weights to extract important features from the image inputs.
 Each layer consists of a linear expansion, a non-linear GELU activation to model non-linear
-features, and a linear projection back to the original dimensional space.
+features, and a linear projection back to the original dimensional space.  
+
+##### *"Noisy" Bottleneck*  
+
+##### *ViT Decoder*  
+
+##### *Unique Loss Function*  
 
 
 
