@@ -45,8 +45,7 @@ features, and a linear projection back to the original dimensional space.
 
 ##### *Unique Loss Function*  
 
-
-
+#### *Results:*
 
 *Outline*  
 * Description of major parts of transformer
