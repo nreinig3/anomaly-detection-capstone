@@ -52,7 +52,21 @@ level of dropout (30% dropout before each of the linear layers of the bottleneck
 
 ##### *Unique Loss Function*  
 
-#### *Results:*
+#### *Results:*  
+
+<img width="918" height="450" alt="image" src="https://github.com/user-attachments/assets/4711700c-e097-4c85-b5e1-e0094906615a" />  
+
+<img width="862" height="550" alt="image" src="https://github.com/user-attachments/assets/c2c52b00-5ea8-4bdc-9d8a-5c18c63f4598" />  
+
+<img width="508" height="470" alt="image" src="https://github.com/user-attachments/assets/0225a406-92a5-4d20-94cf-e1f5bc7aa7c3" />  
+
+
+
+
+
+
+
+
 
 *Outline*  
 * Description of major parts of transformer
