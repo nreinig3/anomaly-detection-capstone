@@ -28,7 +28,7 @@ My team decided to approach the project by each creating our own supervised ML m
 My transformer model uses an encoder to build a latent representation of the image inputs and a decoder to reconstruct them. Anomalies were identified by quantifying the deviation between layers of the encoder and layers of the decoder (reconstruction error), with the expectation that anomalies would have a higher deviation.
 
 ##### *DINOv2 Pre-Trained ViT Encoder*  
-pre-trained Vision Transformer (ViT) as our encoder. Pre-trained ViTs have been found to
+To speed up processing and enhance extraction of important features, we used a pre-trained Vision Transformer (ViT) as our encoder. Pre-trained ViTs have been found to
 perform well in unsupervised anomaly detection and are used frequently in such
 architectures [5]. DINOv2 is a ViT published in 2023 by researchers at Meta AI [8], which
 uses self-supervised learning to extract common features from images. It was trained on a
@@ -40,6 +40,13 @@ Each layer consists of a linear expansion, a non-linear GELU activation to model
 features, and a linear projection back to the original dimensional space.  
 
 ##### *"Noisy" Bottleneck*  
+This bottleneck has two functions. First, as in most similar architectures, the
+bottleneck projects the patch embedding into a small latent space. But secondly, it is
+designed to add “noise” to the image representations in order to force the model to learn
+to transform anomalous features of the embeddings back into their original “normal”
+representations. In this way, the model disrupts the accuracy of anomaly reconstructions
+by teaching it during training not to retain those regions. To accomplish this, we used a high
+level of dropout (30% dropout before each of the linear layers of the bottleneck).
 
 ##### *ViT Decoder*  
 
