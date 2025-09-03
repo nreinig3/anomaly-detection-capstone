@@ -6,19 +6,19 @@
 ### Problem: 
 My team's project was sponsored by Novelis, a global leader in the production of low-carbon Aluminum rolls used by beverage packaging, automotive, aerospace, and other industries. At the time of the project, Novelis was using a supervised machine learning model to detect defects in its finished Aluminum rolls as part of its quality control process. But because supervised learning models aren't good at detecting novel types of defects, and because training supervised models is often labor-intensive due to the need to label the data, the company wanted to know if *unsupervised* anomaly detection methods could be feasible. 
 
-#### Goal:
+### Goal:
 Thus the goal of our project was to create an unsupervised ML model for anomaly (defect) detection, with high enough recall (around 95%) and specificity that it could be implemented in Novelis's manufacturing facilities. 
 
-#### *Solution:*
+### Solution:
 My team decided to approach the project by each creating our own supervised ML models in parallel and then evaluating them against each other. I decided to develop a transformer architecture, since transformers are powerful for numerous applications including anomaly detection. The downside of using tranformers for industrial anomaly detection is that inference tends to be relatively slow compared to other ML methods, but I found ways to manage this. 
 
-#### *Key Features:*
+### Key Features:
 - An encoder composed of layers of pretrained Vision Transformers (ViT)
 - A bottleneck that adds noise to the image representations, to force the decoder to ignore anomalies during image reconstruction
 - A decoder utilizing linear attention to reconstruct images
 - A loss function that calculates error from middle layers of the encoder and decoder, to allow for more degrees of freedom in finding solutions that minimize the loss
 
-#### *Architecture:*
+### Architecture:
 
 
 <img src="./images/transformer_figure.png" width="920" alt="A flow diagram of the transformer architecture showing the encoder, the bottleneck, and the decoder">
