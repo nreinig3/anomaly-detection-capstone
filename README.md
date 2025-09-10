@@ -8,7 +8,7 @@ This project developed an **unsupervised deep learning model** to identify novel
 
 **Key Achievements:**
 *   **Achieved 95% recall** in detecting anomalous defects without using labeled training data.
-*   architected and deployed a **Transformer-based model** on **Microsoft Azure ML** within strict computational constraints (T4 GPU).
+*   Architected and deployed a **Transformer-based model** on **Microsoft Azure ML** within strict computational constraints (T4 GPU).
 *   Delivered a scalable solution with the potential to significantly reduce manual quality control labor.
   
 ### Problem: 
