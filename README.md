@@ -11,8 +11,18 @@ This project developed an **unsupervised deep learning model** to identify novel
 *   Architected and deployed a **Transformer-based model** on **Microsoft Azure ML** within strict computational constraints (T4 GPU).
 *   Delivered a scalable solution with the potential to significantly reduce manual quality control labor.
   
-### Problem: 
-My team's project was sponsored by Novelis, a global leader in the production of low-carbon Aluminum rolls used by beverage packaging, automotive, aerospace, and other industries. At the time of the project, Novelis was using a supervised machine learning model to detect defects in its finished Aluminum rolls as part of its quality control process. But because supervised learning models aren't good at detecting novel types of defects, and because training supervised models is often labor-intensive due to the need to label the data, the company wanted to know if *unsupervised* anomaly detection methods could be feasible. 
+### The Problem: 
+Supervised learning models for quality control are ineffective at detecting novel defects and require a large, constantly updated dataset of labeled examples. Novelis needed a more agile and comprehensive solution to maintain its high-quality standards.
+
+### Our Solution:
+We designed and implemented a custom **Variational Autoencoder (VAE)** and a **Transformer-based architecture** to perform unsupervised anomaly detection on industrial imagery. The model was trained exclusively on images of "good" aluminum rolls, learning to identify deviations from the norm as potential defects.
+
+### Tech Stack:
+*   **Languages:** Python
+*   **ML Frameworks:** PyTorch, Scikit-learn
+*   **Cloud:** Microsoft Azure ML, Azure Blob Storage
+*   **Visualization:** Matplotlib, Seaborn
+*   **Version Control:** Git, GitHub
 
 ### Goal:
 Thus the goal of our project was to create an unsupervised ML model for anomaly (defect) detection, with high enough recall (around 95%) and specificity that it could be implemented in Novelis's manufacturing facilities. 
