@@ -2,6 +2,14 @@
 
 ## Capstone (Practicum) project for Master of Science in Computational Analytics degree @ Georgia Tech
 
+### Overview: 
+
+This project developed an **unsupervised deep learning model** to identify novel defects in aluminum roll production for **Novelis**, a global leader in low-carbon aluminum manufacturing. The solution was designed to overcome the limitations of their existing supervised system, which struggled with new defect types and required extensive labeled data.
+
+**Key Achievements:**
+*   **Achieved 95% recall** in detecting anomalous defects without using labeled training data.
+*   architected and deployed a **Transformer-based model** on **Microsoft Azure ML** within strict computational constraints (T4 GPU).
+*   Delivered a scalable solution with the potential to significantly reduce manual quality control labor.
   
 ### Problem: 
 My team's project was sponsored by Novelis, a global leader in the production of low-carbon Aluminum rolls used by beverage packaging, automotive, aerospace, and other industries. At the time of the project, Novelis was using a supervised machine learning model to detect defects in its finished Aluminum rolls as part of its quality control process. But because supervised learning models aren't good at detecting novel types of defects, and because training supervised models is often labor-intensive due to the need to label the data, the company wanted to know if *unsupervised* anomaly detection methods could be feasible. 
