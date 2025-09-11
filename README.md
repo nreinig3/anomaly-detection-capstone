@@ -33,7 +33,7 @@ This document focuses on the design and performance of the Transformer model I d
 I developed a transformer architecture from the ground up, specifically designed for the constraints of industrial anomaly detection. While transformers are known for high performance, their computational cost can make inference slow. My architecture incorporated several key innovations to manage this trade-off and achieve good results.
 
 ### Architecture Overview
-The model uses an encoder to build a latent representation of input images of aluminum coils, a bottleneck to further compress the latent representation and add noise, and a decoder to loosely reconstruct the images. Anomalies are identified by quantifying the deviation between encoder and decoder layer activations (reconstruction error), under the premise that anomalous regions will reconstruct more poorly than non-anomalous regions.
+The model uses an encoder to create a latent representation of input images, a bottleneck to compress this representation and inject noise, and a decoder to reconstruct the images. Anomalies are identified by quantifying the deviation between encoder and decoder layer activations (reconstruction error), based on the premise that anomalous regions will reconstruct less accurately.
 
 <img src="./images/transformer_figure.png" width="920" alt="A flow diagram of the transformer architecture showing the encoder, the bottleneck, and the decoder">
 
