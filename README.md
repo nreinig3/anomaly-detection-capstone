@@ -17,7 +17,7 @@ This project developed an unsupervised deep learning model to identify defects i
   
 ## The Problem
 
-Supervised learning models for quality control are ineffective at detecting novel defects and require a large, constantly updated dataset of labeled examples. Novelis needed a more agile and comprehensive solution to maintain its high-quality standards.
+Supervised learning models for quality control are ineffective at detecting novel defects and require a large, constantly updated dataset of labeled examples. Novelis to explore a more agile and comprehensive solution to maintain its high-quality standards.
 
 ## Solution Approach
 
