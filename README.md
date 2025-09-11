@@ -65,57 +65,19 @@ The model uses an encoder to create a latent representation of input images, a b
 *   **Visualization:** Matplotlib, Seaborn
 *   **Version Control:** Git, GitHub
 
-### Goal:
-Thus the goal of our project was to create an unsupervised ML model for anomaly (defect) detection, with high enough recall (around 95%) and specificity that it could be implemented in Novelis's manufacturing facilities. 
+## Results
 
-### Constraints:
-We were required to deploy our solution in Microsoft's Azure ML cloud platform, on a T4 GPU (due to budget constraints and the available hardware stack at the factories). It's important to note that Azure has no in-house unsupervised anomaly detection model that could be used for our purposes, so we had to build our own models on the Azure ML platform.
+My transformer model successfully **met the project's primary goal, achieving >95% recall** in detecting anomalous defects on our internal test set. It significantly outperformed the parallel VAE and GAN approaches in identifying novel defect types, demonstrating the viability of a carefully engineered transformer for high-accuracy industrial anomaly detection.
 
-### Solution:
-My team decided to approach the project by each creating our own supervised ML models in parallel and then evaluating them against each other. I decided to develop a transformer architecture, since transformers are powerful for numerous applications including anomaly detection. The downside of using tranformers for anomaly detection is that inference tends to be relatively slow compared to other ML methods, but I found ways to manage this. 
+**Generalization Challenge & Insight:**
+Performance was also evaluated on a separate, more challenging test set provided by the sponsor. While **anomaly recall remained high, the false positive rate increased**; many known "good" images were incorrectly flagged as anomalous. This suggests the model's training data, while accurate, lacked the full diversity of "good" images found across different manufacturing conditions. Since the model learns to flag any deviation from its training set as an anomaly, a representative dataset is critical for minimizing false positives.
 
-### Key Features:
-- An encoder composed of layers of pretrained Vision Transformers (ViT)
-- A bottleneck that adds noise to the image representations, to force the decoder to ignore anomalies during image reconstruction
-- A decoder utilizing linear attention to reconstruct images
-- A loss function that calculates error from middle layers of the encoder and decoder, to allow for more degrees of freedom in finding solutions that minimize the loss
+**Conclusion & Handoff:**
+Despite this challenge, the sponsor found the results **highly promising for future development**. To facilitate a smooth transition, I prepared the code for implementation by creating robust training, validation, and inference scripts, all thoroughly documented with clear comments and instructions.
 
-### Architecture:
+---
+*This project was completed under a confidentiality agreement with Novelis. The code and proprietary data are not available in this repository. This document outlines the architectural approach and technical reasoning behind the solution.*
 
-
-<img src="./images/transformer_figure.png" width="920" alt="A flow diagram of the transformer architecture showing the encoder, the bottleneck, and the decoder">
-
-*Figure 1: Transformer flowchart showing encoder, bottleneck and decoder regions.*  
-
-My transformer model uses an encoder to build a latent representation of the image inputs and a decoder to reconstruct them. Anomalies were identified by quantifying the deviation between layers of the encoder and layers of the decoder (reconstruction error), with the expectation that anomalies would have a higher deviation.
-
-#### *DINOv2 Pre-Trained ViT Encoder*  
-To speed up processing and enhance extraction of important features, we used a pre-trained Vision Transformer (ViT) as our encoder. Pre-trained ViTs have been found to
-perform well in unsupervised anomaly detection and are used frequently in such
-architectures [5]. DINOv2 is a ViT published in 2023 by researchers at Meta AI [8], which
-uses self-supervised learning to extract common features from images. It was trained on a
-large, roughly 142 million image dataset mostly from ImageNet, with relatively high
-resolution (416x416 pixels during part of training). It has 12 layers and follows a standard
-transformer architecture (see encoder region of Figure 13 above), with each layer using
-pre-trained, frozen attention weights to extract important features from the image inputs.
-Each layer consists of a linear expansion, a non-linear GELU activation to model non-linear
-features, and a linear projection back to the original dimensional space.  
-
-#### *"Noisy" Bottleneck*  
-This bottleneck has two functions. First, as in most similar architectures, the
-bottleneck projects the patch embedding into a small latent space. But secondly, it is
-designed to add “noise” to the image representations in order to force the model to learn
-to transform anomalous features of the embeddings back into their original “normal”
-representations. In this way, the model disrupts the accuracy of anomaly reconstructions
-by teaching it during training not to retain those regions. To accomplish this, we used a high
-level of dropout (30% dropout before each of the linear layers of the bottleneck).
-
-#### *"Linear Self-Attention in the ViT Decoder*  
-The decoder section of the model is composed of 8 ViT layers built as [x/x/x], which utilize a "linear" self-attention mechanism. Self-attention describes [], and the "linear" aspect here (as coined by Liu et al.) refers to a less computationally complex, more unfocused attention mechanism, characterized by [what makes it so the linear attn eqn can be recast?]. 
-In their paper for their "Dinomaly" model, Liu et al. describe this attention mechanism as being particularly well-suited for industrial anomaly detection, because its lower computation speeds up inference (which is often critical in industrial applications), and the unfocused attention could help prevent highly faithful reconstructions of anomalies, which can be a problem in transformers, autoencoders, and other ML algorithms used for anomaly detection. 
-#### *Unique Loss Function*  
-
-### Results:  
 
 <img width="918" height="450" alt="image" src="https://github.com/user-attachments/assets/4711700c-e097-4c85-b5e1-e0094906615a" />  
 
