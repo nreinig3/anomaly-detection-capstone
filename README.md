@@ -1,21 +1,43 @@
-# Defect Detection in Coil Manufacturing Image Data
+# Unsupervised Anomaly Detection for Aluminum Coil Manufacturing
 
-## Capstone (Practicum) project for Master of Science in Computational Analytics degree @ Georgia Tech
+**Capstone (Practicum) project for Master of Science in Computational Analytics | Georgia Tech**
 
-### Overview: 
+**Sponsor:** Novelis, a global leader in low-carbon aluminum manufacturing.
 
-This project developed an **unsupervised deep learning model** to identify novel defects in aluminum roll production for **Novelis**, a global leader in low-carbon aluminum manufacturing. The solution was designed to overcome the limitations of their existing supervised system, which struggled with new defect types and required extensive labeled data.
+## Overview
 
-**Key Achievements:**
-*   **Achieved 95% recall** in detecting anomalous defects without using labeled training data.
-*   Architected and deployed a **Transformer-based model** on **Microsoft Azure ML** within strict computational constraints (T4 GPU).
+This project developed an unsupervised deep learning model to identify defects in aluminum roll production for Novelis. The goal was to overcome the limitations of their supervised system, which struggled with new defect types and required extensive labeled data.
+
+**My Key Achievement:**
+*   **Solely architected and implemented a novel Transformer-based model** that achieved the project's target of **>95% recall** in detecting anomalous defects without using labeled training data.
+*   Deployed and evaluated the model on **Microsoft Azure ML** within strict computational constraints (T4 GPU).
 *   Delivered a scalable solution with the potential to significantly reduce manual quality control labor.
+
+*(Note: My teammates developed a Variational Autoencoder (VAE) and a Generative Adversarial Network (GAN) model in parallel. My Transformer architecture outperformed both alternatives in our evalatuation metrics, but is likely somewhat slower in inference speed.)*
   
-### The Problem: 
+## The Problem
+
 Supervised learning models for quality control are ineffective at detecting novel defects and require a large, constantly updated dataset of labeled examples. Novelis needed a more agile and comprehensive solution to maintain its high-quality standards.
 
-### Our Solution:
-We designed and implemented a custom **Variational Autoencoder (VAE)** and a **Transformer-based architecture** to perform unsupervised anomaly detection on industrial imagery. The model was trained exclusively on images of "good" aluminum rolls, learning to identify deviations from the norm as potential defects.
+## Solution Approach
+
+Our team adopted a parallel approach, exploring three different unsupervised architectures:
+1.  **Variational Autoencoder (VAE)**
+2.  **Generative Adversarial Network (GAN)**
+3.  **Custom Transformer-based Model**
+
+This document focuses on the design and performance of the Transformer model I developed, which proved to be the most successful.
+
+## My Solution: A Custom Transformer Architecture for Anomaly Detection
+
+I developed a transformer architecture from the ground up, specifically designed for the constraints of industrial anomaly detection. While transformers are known for high performance, their computational cost can make inference slow. My architecture incorporated several key innovations to manage this trade-off and achieve good results.
+
+### Architecture Overview
+The model uses an encoder to build a latent representation of input images of aluminum coils, and a decoder to loosely reconstruct them. Anomalies are identified by quantifying the deviation between encoder and decoder layer activations (reconstruction error), under the premise that anomalous regions will reconstruct more poorly than non-anomalous regions.
+
+<img src="./images/transformer_figure.png" width="920" alt="A flow diagram of the transformer architecture showing the encoder, the bottleneck, and the decoder">
+
+*Figure 1: Transformer flowchart showing encoder, bottleneck and decoder regions.*  
 
 ### Tech Stack:
 *   **Languages:** Python
