@@ -39,6 +39,14 @@ The model uses an encoder to create a latent representation of input images, a b
 
 *Figure 1: Transformer flowchart showing encoder, bottleneck and decoder regions.*  
 
+### Key Technical Features
+
+1.  **DINOv2 Pre-Trained ViT Encoder:**
+    *   To enhance feature extraction, I used a pre-trained Vision Transformer (ViT) as a frozen encoder. Specifically, I employed **DINOv2** (Meta AI, 2023), which was self-supervised on 142M images.
+    *   **Why it matters:** Using a pre-trained, frozen encoder drastically improved training efficiency and feature quality compared to training from scratch, providing a strong foundation for the model.
+
+  
+
 ### Tech Stack:
 *   **Languages:** Python
 *   **ML Frameworks:** PyTorch, Scikit-learn
