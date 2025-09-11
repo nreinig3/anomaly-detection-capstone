@@ -43,13 +43,24 @@ The model uses an encoder to create a latent representation of input images, a b
 
 1.  **DINOv2 Pre-Trained ViT Encoder:**
     *   To enhance feature extraction, I used a pre-trained Vision Transformer (ViT) as a frozen encoder. Specifically, I employed **DINOv2** (Meta AI, 2023), which was self-supervised on 142M images.
-    *   **Why it matters:** Using a pre-trained, frozen encoder drastically improved training efficiency and feature quality compared to training from scratch, providing a strong foundation for the model.
+    *   **Rationale:** Using a pre-trained, frozen encoder has been shown to significantly improve training efficiency and feature quality compared to training from scratch, when using a small or moderately-sized training dataset (<5000 images).
 
+2.  **A "Noisy" Bottleneck for Anomaly Suppression:**
+    *   The bottleneck projects patch embeddings into a latent space but is also designed to disrupt anomalous feature reconstruction.
+    *   **Implementation:** I introduced a high level of dropout (**30% before each linear layer**) within the bottleneck. This "noise" forces the decoder to learn to reconstruct only the underlying "normal" patterns, effectively teaching it to ignore anomalies during the reconstruction process.
   
+3.  **Decoder with Linear Self-Attention:**
+    *   The decoder is composed of 8 ViT layers utilizing a **linear self-attention** mechanism.
+    *   **Rationale:** Based on the work of Liu et al. ("Dinomaly"), linear attention is less computationally complex than standard self-attention, **significantly speeding up inference**. Furthermore, its "unfocused" nature helps prevent the model from achieving overly faithful reconstructions of anomalies, a common problem in other architectures.
 
+4.  **A Unique Loss Function for Robust Training:**
+    *   Instead of a simple pixel-wise reconstruction loss (e.g., MSE) calculated from the original and reconstructed images, the loss function calculates deviation from **multiple middle layers of the encoder and decoder**.
+    *   **Rationale:** This provides more degrees of freedom for the model to minimize loss, leading to more stable training and better convergence on a robust solution for identifying anomalies.
+  
 ### Tech Stack:
 *   **Languages:** Python
 *   **ML Frameworks:** PyTorch, Scikit-learn
+*   **Model Architecture:** Custom Transformer based on DINOv2 (ViT)
 *   **Cloud:** Microsoft Azure ML, Azure Blob Storage
 *   **Visualization:** Matplotlib, Seaborn
 *   **Version Control:** Git, GitHub
