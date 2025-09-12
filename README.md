@@ -6,7 +6,7 @@
 
 <img width="1121" height="426" alt="image" src="https://github.com/user-attachments/assets/42278be9-3e71-4ac6-86c8-1a7702a32550" />
 
-*Image of a generic metal manufacturing facility, replicated with permission from Unsplash*
+*Image of a generic metal manufacturing facility, provided by Unsplash (used under Unsplash license)*
 
 
 ## Overview
