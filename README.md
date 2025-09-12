@@ -4,6 +4,9 @@
 
 **Sponsor:** Novelis, a global leader in low-carbon aluminum manufacturing.
 
+<img width="1017" height="409" alt="image" src="https://github.com/user-attachments/assets/763320e6-e476-4918-8974-cfb8a5b673cf" />
+
+
 ## Overview
 
 This project developed an unsupervised deep learning model to identify defects in aluminum roll production for Novelis. The goal was to overcome the limitations of their supervised system, which struggled with new defect types and required extensive labeled data.
