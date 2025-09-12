@@ -67,10 +67,10 @@ The model uses an encoder to create a latent representation of input images, a b
 
 ## Results
 
-My transformer model successfully **met the project's primary goal, achieving &ge; 95% recall** in detecting anomalous defects on our internal test set. It significantly outperformed the parallel VAE and GAN approaches in identifying novel defect types, demonstrating the viability of a carefully engineered transformer for high-accuracy industrial anomaly detection.
+My transformer model successfully **met the project's primary goal, achieving &ge; 95% recall** in detecting anomalous defects on our internal test set. It outperformed the parallel VAE and GAN approaches in identifying novel defect types, demonstrating the viability of a carefully engineered transformer for high-accuracy industrial anomaly detection.
 
 **Generalization Challenge & Insight:**
-Performance was also evaluated on a separate, more challenging test set provided by the sponsor. While **anomaly recall remained high, the false positive rate increased**; many known "good" images were incorrectly flagged as anomalous. This suggests the model's training data, while accurate, lacked the full diversity of "good" images found across different manufacturing conditions. Since the model learns to flag any deviation from its training set as an anomaly, a representative dataset is critical for minimizing false positives.
+Performance was also evaluated on a separate, more challenging holdout test set provided by the sponsor. While **anomaly recall remained high, the false positive rate increased**; many known "good" images were incorrectly flagged as anomalous. This suggests the model's training data, while accurate, lacked the full diversity of "good" images found across different manufacturing conditions. Since the model learns to flag any deviation from its training set as an anomaly, a truly representative dataset is critical for minimizing false positives.
 
 **Conclusion & Handoff:**
 Despite this challenge, the sponsor found the results **highly promising for future development**. To facilitate a smooth transition, I prepared the code for implementation by creating robust training, validation, and inference scripts, all thoroughly documented with clear comments and instructions.
