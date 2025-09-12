@@ -4,7 +4,8 @@
 
 **Sponsor:** Novelis, a global leader in low-carbon aluminum manufacturing.
 
-<img width="1118" height="498" alt="image" src="https://github.com/user-attachments/assets/f4c98a76-b490-4f80-a478-4cc329f7ccde" />
+<img width="1118" height="498" alt="image" src="https://github.com/user-attachments/assets/f4c98a76-b490-4f80-a478-4cc329f7ccde" />  
+*Image of a generic metal manufacturing facility, replicated with permission from Unsplash*
 
 
 ## Overview
