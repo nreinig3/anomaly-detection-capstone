@@ -42,7 +42,7 @@ The model uses an encoder to create a latent representation of input images, a b
 
 <img src="./images/transformer_figure.png" width="920" alt="A flow diagram of the transformer architecture showing the encoder, the bottleneck, and the decoder">
 
-*Figure 1: Transformer flowchart showing encoder, bottleneck and decoder regions.*  
+*Figure 1: Transformer flowchart showing encoder, bottleneck and decoder regions (click to enlarge).*  
 
 ### Key Technical Features
 
