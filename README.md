@@ -80,36 +80,7 @@ Despite this challenge, the sponsor found the results **highly promising for fut
 
 <img width="918" height="450" alt="image" src="https://github.com/user-attachments/assets/4711700c-e097-4c85-b5e1-e0094906615a" />  
 
-<img width="862" height="550" alt="image" src="https://github.com/user-attachments/assets/c2c52b00-5ea8-4bdc-9d8a-5c18c63f4598" />  
-
 <img width="508" height="470" alt="image" src="https://github.com/user-attachments/assets/0225a406-92a5-4d20-94cf-e1f5bc7aa7c3" />  
 
 ---
 *This project was completed under a confidentiality agreement with Novelis. The code and proprietary data are not available in this repository. This document outlines the architectural approach and technical reasoning behind the solution.*
-
-
-
-
-
-
-
-
-
-
-
-
-*Outline*  
-* Description of major parts of transformer
-* Results
-* Conclusion
-
-The goal of my team’s Capstone (Practicum) project was to develop an unsupervised anomaly detection method with high enough [precision and specificity] to be implemented in our sponsoring company's manufacturing facilities (our sponsor for the project was Novelis, a leading manufacturer and recycler of aluminum). Several machine learning methods were tested; the one I focused on was a transformer architecture because they tend to be accurate and although typically slower than ML methods like auto-encoders, there have been recent advancements that have made them more practical in industrial anomaly detection settings. My transformer work involved building upon a recently published transformer architecture with class-leading high performance metrics and relatively fast inference speed. The flowchart shows the major processes:
-
-
-- Add info on code, libraries, and methodology
-  
-When the transformer was evaluated on a test dataset using images from the same facilites as the training and validations sets, the performance was quite good:
-
-On a separate test set created by the company sponsor, the anomaly detection recall remained high but recall for "good" images fell substantially. It was hypothesized that this was due to the transformer not being trained on a wide enough variety of video feed images from the manufacturing facilities. Since the transformer is only trained on "good" images, it interprets any deviation from the images it's been trained on as anomalous. Therefore it is crucial that the training set be representative of all types of "good" images. 
-
-Despite the decreased recall of good images, the sponsor company still believed that the promising enough to develop further. Before being passed off to the sponsor, my code was prepared for implementation by preparing training, validation and inference scripts with clearly written comments and instructions (unfortunately, the code files cannot be shared as they are property of the sponsor company). 
