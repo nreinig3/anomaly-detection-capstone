@@ -67,7 +67,7 @@ The model uses an encoder to create a latent representation of input images, a b
 
 ## Results
 
-My transformer model successfully **met the project's primary goal, achieving >95% recall** in detecting anomalous defects on our internal test set. It significantly outperformed the parallel VAE and GAN approaches in identifying novel defect types, demonstrating the viability of a carefully engineered transformer for high-accuracy industrial anomaly detection.
+My transformer model successfully **met the project's primary goal, achieving &ge; 95% recall** in detecting anomalous defects on our internal test set. It significantly outperformed the parallel VAE and GAN approaches in identifying novel defect types, demonstrating the viability of a carefully engineered transformer for high-accuracy industrial anomaly detection.
 
 **Generalization Challenge & Insight:**
 Performance was also evaluated on a separate, more challenging test set provided by the sponsor. While **anomaly recall remained high, the false positive rate increased**; many known "good" images were incorrectly flagged as anomalous. This suggests the model's training data, while accurate, lacked the full diversity of "good" images found across different manufacturing conditions. Since the model learns to flag any deviation from its training set as an anomaly, a representative dataset is critical for minimizing false positives.
@@ -75,15 +75,17 @@ Performance was also evaluated on a separate, more challenging test set provided
 **Conclusion & Handoff:**
 Despite this challenge, the sponsor found the results **highly promising for future development**. To facilitate a smooth transition, I prepared the code for implementation by creating robust training, validation, and inference scripts, all thoroughly documented with clear comments and instructions.
 
----
-*This project was completed under a confidentiality agreement with Novelis. The code and proprietary data are not available in this repository. This document outlines the architectural approach and technical reasoning behind the solution.*
-
-
 <img width="918" height="450" alt="image" src="https://github.com/user-attachments/assets/4711700c-e097-4c85-b5e1-e0094906615a" />  
 
 <img width="862" height="550" alt="image" src="https://github.com/user-attachments/assets/c2c52b00-5ea8-4bdc-9d8a-5c18c63f4598" />  
 
 <img width="508" height="470" alt="image" src="https://github.com/user-attachments/assets/0225a406-92a5-4d20-94cf-e1f5bc7aa7c3" />  
+
+---
+*This project was completed under a confidentiality agreement with Novelis. The code and proprietary data are not available in this repository. This document outlines the architectural approach and technical reasoning behind the solution.*
+
+
+
 
 
 
