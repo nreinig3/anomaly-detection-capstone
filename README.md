@@ -86,7 +86,7 @@ Despite this challenge, the sponsor found the results **highly promising for fut
 
 <img width="508" height="470" alt="image" src="https://github.com/user-attachments/assets/0225a406-92a5-4d20-94cf-e1f5bc7aa7c3" />  
 
-*Scatter plot of anomaly scores (reconstruction error) by image class for the Transformer model, evaluated on the test set. Plot shows good discrimination of good and defect images, with recall of 83.3% for defect images and 91.2% for good images.*
+*Figure 3: Scatter plot of anomaly scores (reconstruction error) by image class for the Transformer model, evaluated on the test set. Plot shows good discrimination of good and defect images, with recall of 83.3% for defect images and 91.2% for good images.*
 
 ---
 *Please note that this project was completed under a confidentiality agreement with Novelis, therefore the code and proprietary data are not available in this repository. The purpose of this document is to outline the architectural approach and technical reasoning behind the solution.*
