@@ -82,11 +82,11 @@ Despite this challenge, the sponsor found the results **highly promising for fut
 
 <img width="918" height="450" alt="image" src="https://github.com/user-attachments/assets/4711700c-e097-4c85-b5e1-e0094906615a" />  
 
-*Figure 2. Anomaly score (reconstruction error) versus image class for the Transformer model on the test set. Generally higher anomaly scores for the 'defect' class indicate the model's effectiveness, though some overlap is present (16.7% misclassified).*
+*Figure 2. Anomaly score (reconstruction error) versus image class for the Transformer model on the internal test set (Test Set #1). Generally higher anomaly scores for the 'defect' class indicate the model's effectiveness, though some overlap is present (16.7% misclassified).*
 
 <img width="508" height="470" alt="image" src="https://github.com/user-attachments/assets/0225a406-92a5-4d20-94cf-e1f5bc7aa7c3" />  
 
-*Figure 3. Receiver Operating Characteristic (ROC) curve for the transformer model on the held-out test set, demonstrating excellent performance (AUC = 0.96).*
+*Figure 3. Receiver Operating Characteristic (ROC) curve for the transformer model on Test Set #1, demonstrating excellent performance (AUC = 0.96).*
 
 
 ---
