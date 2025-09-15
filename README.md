@@ -72,10 +72,15 @@ The model uses an encoder to create a latent representation of input images, a b
 
 ## Results
 
-My transformer model successfully **met the project's primary goal, achieving &ge; 95% recall** in detecting anomalous defects on our internal test set. It outperformed the parallel VAE and GAN approaches in identifying novel defect types, demonstrating the viability of a carefully engineered transformer for high-accuracy industrial anomaly detection.
+My transformer model successfully **met the project's primary goal, achieving ≥ 95% recall** in detecting anomalous defects on the challenging holdout test set provided by Novelis (Test Set #2). It outperformed the parallel VAE and GAN approaches in identifying novel defect types, demonstrating the viability of a carefully engineered transformer for high-accuracy industrial anomaly detection.
 
-**Generalization Challenge & Insight:**
-Performance was also evaluated on a separate, more challenging holdout test set provided by the sponsor. While **anomaly recall remained high, the false positive rate increased**; many known "good" images were incorrectly flagged as anomalous. This suggests the model's training data, while accurate, lacked the full diversity of "good" images found across different manufacturing conditions. Since the model learns to flag any deviation from its training set as an anomaly, a truly representative dataset is crucial for minimizing false positives.
+### Generalization Performance & Insight
+
+A deeper analysis on a separate internal test set (Test Set #1), composed of images more similar to the training data, revealed strong performance with a recall of 83.3% for defect images and 91.2% for good images.
+
+However, the model's performance on Novelis's more diverse holdout set (Test Set #2) revealed a key insight: while defect recall remained high at 95%, the **false positive rate increased significantly**. Many known 'good' images were incorrectly flagged as anomalous.
+
+This suggests that while the training data was accurate, it lacked the full diversity of 'good' images found across different manufacturing conditions. The model learns to flag any deviation from its learned representation of 'good' as an anomaly, underscoring that a truly representative dataset is crucial for minimizing false positives in a production environment.
 
 **Conclusion & Handoff:**
 Despite this challenge, the sponsor found the results **highly promising for future development**. To facilitate a smooth transition, I prepared the code for implementation by creating robust training, validation, and inference scripts, all thoroughly documented with clear comments and instructions.
