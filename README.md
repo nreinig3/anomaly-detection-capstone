@@ -74,7 +74,7 @@ The model uses an encoder to create a latent representation of input images, a b
 
 My transformer model successfully **met the project's primary goal, achieving ≥ 95% recall** on Novelis's holdout test set (Test Set #2), outperforming parallel VAE and GAN approaches. This demonstrates the strong potential of a carefully engineered transformer for identifying novel defects in an industrial setting.
 
-**Generalization Challenge & Root Cause**
+**Generalization Challenge:**
 The model performed well on an internal set (Test Set #1), achieving 83.3% recall for defects and 91.2% for good images. However, its performance on Novelis's separate holdout set (Test Set #2) revealed the **critical importance of data diversity**: while defect recall remained high (95%), the false positive rate increased significantly. This indicates that the training data, while accurate, was apparently not fully representative of the natural variation in "good" images across different manufacturing conditions. Because of that, the model incorrectly flagged acceptable images as anomalies, highlighting the importance of maximizing diversity of the "good" class in order to minimize false positives in production.
 
 **Conclusion & Handoff:**
