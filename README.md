@@ -1,6 +1,6 @@
 # Unsupervised Anomaly Detection for Aluminum Coil Manufacturing
 
-**Capstone (Practicum) project for Master of Science in Computational Analytics | Georgia Tech**
+**Capstone (Practicum) Project for Master of Science in Computational Analytics | Georgia Tech**
 
 **Sponsor:** Novelis, a global leader in low-carbon aluminum manufacturing.
 
